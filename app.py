@@ -1,18 +1,16 @@
 import os
-from flask import Flask
-from flask import redirect, url_for
-from models.models import db
+from flask import Flask, redirect, url_for
+from models.models import db, User
 from flask_login import LoginManager
-from auth.auth import auth_bp  # ✅ Ensure authentication is imported
-from controllers.event_controller import event_bp  # ✅ Ensure event management is imported
-from models.models import User  # ✅ Ensure User model is imported
+from auth.auth import auth_bp
+from controllers.event_controller import event_bp
 
 app = Flask(__name__)
 
-# ✅ Secure Secret Key for Session Management
+# Secret key for sessions
 app.config['SECRET_KEY'] = os.urandom(24)
 
-# ✅ Database Setup
+# Database configuration
 DATABASE_FOLDER = os.path.join(os.getcwd(), "database")
 DATABASE_FILE = os.path.join(DATABASE_FOLDER, "events.db")
 
@@ -22,28 +20,32 @@ if not os.path.exists(DATABASE_FOLDER):
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DATABASE_FILE}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# Initialize DB
 db.init_app(app)
 
-# ✅ Login Manager Setup
-login_manager.init_app(app)
+# ✅ Create and configure login manager properly
 login_manager = LoginManager()
-login_manager.login_view = 'auth.login'  # ✅ Fix incorrect URL reference
+login_manager.login_view = 'auth.login'
+login_manager.init_app(app)
 
-# ✅ Register Blueprints with Correct URL Prefixes
-app.register_blueprint(auth_bp)  # ✅ Now "/auth/login" and "/auth/register" will work
-app.register_blueprint(event_bp, url_prefix='/events')  # ✅ "/events" routes remain functional
-
+# ✅ User loader for login manager
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# ✅ Initialize Database
+# ✅ Register blueprints
+app.register_blueprint(auth_bp)
+app.register_blueprint(event_bp, url_prefix='/events')
+
+# Home route
+@app.route('/')
+def home():
+    return redirect(url_for('auth.login'))
+
+# Create DB tables
 with app.app_context():
     db.create_all()
 
-@app.route('/')
-def home():
-    return redirect(url_for('auth/login'))
-
+# Run app
 if __name__ == '__main__':
     app.run(debug=True)
