@@ -1,0 +1,324 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Centering the form container */
+.auth-container {
+    width: 350px;
+    margin: 80px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;  /* Left-align labels */
+}
+
+/* Page background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Form heading */
+.auth-container h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Flash messages */
+.flash-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Labels */
+.auth-container label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input fields */
+.auth-container input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.auth-container button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.auth-container button:hover {
+    background: #0056b3;
+}
+
+/* Links */
+.auth-container p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* ================= Event List Page Styling ================= */
+
+/* General Page Container */
+.container {
+    width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Centered Header */
+.header {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Flash Message Styling */
+.flash-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.blue { background: #007bff; }
+.blue:hover { background: #0056b3; }
+
+.green { background: #28a745; }
+.green:hover { background: #1e7e34; }
+
+.red { background: #dc3545; }
+.red:hover { background: #bd2130; }
+
+
+/* ================= Add Event Page Styling ================= */
+
+/* Form container */
+.form-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Form header */
+.form-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.form-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Button row for spacing */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;  /* Increased margin for better spacing */
+}
+
+/* Adjust button spacing */
+.button-row .btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+/* Gray button for cancel */
+.gray { background: #6c757d; }
+.gray:hover { background: #5a6268; }
+
+
+/* ================= Event List Styling ================= */
+
+/* Centered Container */
+.event-container {
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Table Styling */
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.event-table th, .event-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Make headers bold */
+.event-table th {
+    font-weight: bold;
+    background: #f8f9fa;
+}
+
+/* Align text left inside cells */
+.event-table td {
+    text-align: center;
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.blue { background: #007bff; color: white; }
+.blue:hover { background: #0056b3; }
+
+.red { background: #dc3545; color: white; }
+.red:hover { background: #bd2130; }
+
+.green { background: #28a745; color: white; }
+.green:hover { background: #1e7e34; }
+
+
+/* Centering Back to Events Button */
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    background: #6c757d;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background: #5a6268;
+}
+
+
+/* Table Styling */
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.event-table th, .event-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.event-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Align Edit & Delete Buttons in One Line */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+}
+
+.delete-form {
+    margin: 0;
+}
