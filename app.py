@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from auth.auth import auth_bp
 from controllers.event_controller import event_bp
 
-app = Flask(__main__)
+app = Flask(__name__)
 
 # Secret key for sessions
 app.config['SECRET_KEY'] = os.urandom(24)
@@ -48,4 +48,4 @@ with app.app_context():
 
 # Run app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
